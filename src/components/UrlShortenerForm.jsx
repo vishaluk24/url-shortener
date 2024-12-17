@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
 import apiClient from '../api/apiClient';
+import axios from 'axios';
 
 const UrlShortenerForm = () => {
   const [originalUrl, setOriginalUrl] = useState('');
   const [shortUrl, setShortUrl] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await apiClient.post('/shorten', { originalUrl });
-      setShortUrl(response.data.shortUrl);
-    } catch (error) {
-      console.error('Error shortening URL:', error);
-    }
-  };
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await axios.post(
+      `${import.meta.env.VITE_BACKEND_URL}/shorten`,
+      { originalUrl }
+    );
+    setShortUrl(response.data.shortUrl);
+  } catch (error) {
+    console.error('Error shortening URL:', error);
+  }
+};
+
 
   return (
     <div style={{ padding: '20px' }}>
