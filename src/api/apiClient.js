@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-// Base URL for the NestJS backend
+// Dynamically use the base URL from environment variables
 const apiClient = axios.create({
-  baseURL: 'http://localhost:3000/url',
+  baseURL: import.meta.env.VITE_BACKEND_URL,
   timeout: 1000,
 });
 
