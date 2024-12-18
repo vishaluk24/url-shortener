@@ -1,6 +1,6 @@
 /* Set the general background image */
 .container {
-    background-image: url('../../WhatsApp\ Image\ 2024-12-18\ at\ 19.59.11.jpeg'); /* Use the correct path for your image */
+    background-image: url('../assets/WhatsApp.jpeg'); /* Use the correct path for your image */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
